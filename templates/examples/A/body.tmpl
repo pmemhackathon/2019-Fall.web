@@ -3,7 +3,7 @@
 <p class="intro">
 The ability to memory map persistent memory
 and access it directly is fundamental to
-all the examples in this hackathon.
+all the examples in this workshop.
 <p class="intro">
 This example shows how this is done using a
 simple C program.
@@ -51,7 +51,7 @@ is covered in later examples.
 {{step "Run-Time Environment"}}
 
 <p>
-The machine used in this hackathon has several terabytes
+The machine used in this workshop has several terabytes
 of persistent memory installed.
 <p>
 The persistent memory
@@ -70,7 +70,7 @@ files, directories, permissions, quotas, etc.
 
 <p>
 As you can see above, the <code>df</code> command
-shows that the directory <code>/pmem</code> on the hackathon server
+shows that the directory <code>/pmem</code> on the workshop server
 is a file system built on <code>/dev/pmem0</code> (shown in line 3).
 Using the <code>mount command</code> (line 5), we can confirm that
 it is exposed using the <code class="highlight">dax</code> option.
@@ -130,9 +130,9 @@ Now you can try running the program using the above commands.
 {{run "./run.sh"}}
 
 <p>
-Like all examples in this hackathon, any changes you make
-are to your own clone of the hackathon repository.  Your
-clone is on the hackathon server and you can browse it
+Like all examples in this workshop, any changes you make
+are to your own clone of the repository.  Your
+clone is on the workshop server and you can browse it
 directly and download any files you want to keep using
 the menu in the upper left corner of the page.
 
@@ -142,20 +142,12 @@ the menu in the upper left corner of the page.
 This example shows the bare-minimum, raw <code>mmap()</code> access using POSIX
 calls.  This includes using the POSIX <code>msync()</code> to flush stores to
 persistence.  This illustrates that POSIX interfaces work as expected,
-and the repo contains a
-<a href="/repo/examples/A/windows.c" target="_new">Windows version</a>
-showing that raw access is similarly provided by Windows.
-<p>
-<b>This example was just for background!</b>  You need to remember the
-application responsibilities outlined in the slides.  You probably want
-to use libraries like <b>libpmemobj</b> to provide much less raw access.
-<p>
-Even if you decide you don't want the high-level libraries, you probably
-want the basics provided by <b>libpmem</b>.  See <a href="F">Example F</a>
-for more details on that.
+but this isn't the fastest way to use persistent memory.  See <a href="F">Example F</a>
+for faster ways to flush changes from user space and details on <b>libpmem</b>
+which makes the low-level raw access to persistent memory easier.
 <p>
 Now that you've seen the basic memory mapped of persistent memory,
-continue on to <a href="B">Example B</a> to see a much more
-programmer-friendly API for using persistent memory.
+continue on to more examples to see more programmer-friendly APIs
+that build on this basic memory mapping mechanism.
 
 {{bottom}}

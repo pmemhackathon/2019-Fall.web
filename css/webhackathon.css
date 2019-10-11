@@ -139,6 +139,16 @@ form.login div {
 		margin: auto;
 }
 
+.smallcentered {
+		display: block;
+		font-size: smaller;
+		text-align: center;
+		width: 100%;
+}
+a:link.smallcentered,a:visited.smallcentered {
+	color: #0000ff;
+}
+
 form.login input {
 		width: 100%;
 		padding: 12px 20px;
@@ -169,6 +179,11 @@ form.login button::-moz-focus-inner {
 p.login {
 	text-align: center;
 	color: #ba4a00;
+}
+p.granted {
+	text-align: center;
+	font-size: larger;
+	color: darkgreen;
 }
 
 /* text containing "Scroll down to continue" */
