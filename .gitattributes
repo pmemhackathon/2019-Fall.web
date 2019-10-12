@@ -3,5 +3,5 @@
 *.png binary
 *.gif binary
 *.ico binary
-*.match text -whitespace
+webhackathon binary
 GIT_VERSION export-subst
