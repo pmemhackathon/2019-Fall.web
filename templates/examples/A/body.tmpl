@@ -142,12 +142,20 @@ the menu in the upper left corner of the page.
 This example shows the bare-minimum, raw <code>mmap()</code> access using POSIX
 calls.  This includes using the POSIX <code>msync()</code> to flush stores to
 persistence.  This illustrates that POSIX interfaces work as expected,
-but this isn't the fastest way to use persistent memory.  See <a href="F">Example F</a>
-for faster ways to flush changes from user space and details on <b>libpmem</b>
-which makes the low-level raw access to persistent memory easier.
+and the repo contains a
+<a href="/repo/examples/A/windows.c" target="_new">Windows version</a>
+showing that raw access is similarly provided by Windows.
+<p>
+<b>This example was just for background!</b>  You need to remember the
+application responsibilities outlined in the slides.  You probably want
+to use libraries like <b>libpmemobj</b> to provide much less raw access.
+<p>
+Even if you decide you don't want the high-level libraries, you probably
+want the basics provided by <b>libpmem</b>.  See <a href="F">Example F</a>
+for more details on that.
 <p>
 Now that you've seen the basic memory mapped of persistent memory,
-continue on to more examples to see more programmer-friendly APIs
-that build on this basic memory mapping mechanism.
+continue on to <a href="B">Example B</a> to see a much more
+programmer-friendly API for using persistent memory.
 
 {{bottom}}
